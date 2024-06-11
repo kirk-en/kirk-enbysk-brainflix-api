@@ -21,4 +21,13 @@ router.get('/', (req, res) => {
   res.status(200).json(allVideos);
 });
 
+router.get('/:videoId', (req, res) => {
+  const id = req.params.videoId;
+  const videoData = JSON.parse(fs.readFileSync('./data/videos.json'));
+  const singleVideoData = videoData.find((video) => video.id === id)
+  res.status(200).json(singleVideoData);
+});
+
+
+
 export default router;

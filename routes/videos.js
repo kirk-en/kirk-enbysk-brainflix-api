@@ -39,13 +39,13 @@ router.post('/', (req, res) => {
     id: crypto.randomUUID(),
     title: req.body.title,
     channel: 'uploaded by user',
-    image: '',
+    image: '/images/upload-image.jpg',
     description: req.body.description,
-    views: Math.floor(Math.random() * 1000000),
-    likes: Math.floor(Math.random() * 10000),
+    views: Math.floor(Math.random() * 1000000).toLocaleString(),
+    likes: Math.floor(Math.random() * 10000).toLocaleString(),
     duration: '1:00',
     video: '',
-    timeStamp: new Date(),
+    timeStamp: Date.now(),
     comments: [
       {
         id: crypto.randomUUID(),

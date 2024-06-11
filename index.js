@@ -3,14 +3,13 @@ import express from "express";
 import videoRoutes from './routes/videos.js';
 
 const app = express();
-app.use('/videos', videoRoutes)
-app.use(express.static('public'));
-
 // Middleware
+app.use(express.json());
 app.use((req, res, next) => {
-  console.log('middleware inovcation',  new Date().toLocaleTimeString());
+  console.log('middleware inovcation', new Date().toLocaleTimeString());
   next();
 });
+app.use(express.static('public'));
 
 app.use('/videos', videoRoutes);
 

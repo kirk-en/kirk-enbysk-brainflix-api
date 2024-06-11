@@ -1,6 +1,7 @@
 import fs from "fs";
 import express from "express";
 import videoRoutes from './routes/videos.js';
+import cors from 'cors';
 
 // needs .js extension?
 import 'dotenv/config';
@@ -8,6 +9,7 @@ const PORT = process.env.PORT;
 
 const app = express();
 // Middleware
+app.use(cors());
 app.use(express.json());
 app.use((req, res, next) => {
   console.log('middleware inovcation', new Date().toLocaleTimeString());

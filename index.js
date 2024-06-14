@@ -11,7 +11,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use((req, res, next) => {
-  console.log('middleware inovcation', new Date().toLocaleTimeString());
+  console.log('middleware invoked', new Date().toLocaleTimeString());
   next();
 });
 app.use(express.static('public'));

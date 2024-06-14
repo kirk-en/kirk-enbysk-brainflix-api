@@ -2,7 +2,6 @@
 import { timeStamp } from 'console';
 import express from 'express';
 import fs from 'fs';
-// import {v4 as uuidv4} from 'uuid';
 
 const router = express.Router();
 // app.use(express.json());
@@ -38,14 +37,14 @@ router.post('/', (req, res) => {
   const newUpload = {
     id: crypto.randomUUID(),
     title: req.body.title,
-    channel: 'uploaded by user',
+    channel: 'User',
     image: '/images/upload-image.jpg',
     description: req.body.description,
     views: Math.floor(Math.random() * 1000000).toLocaleString(),
     likes: Math.floor(Math.random() * 10000).toLocaleString(),
     duration: '1:00',
-    video: '',
-    timeStamp: Date.now(),
+    video: '/videos/test-stream.mp4',
+    timestamp: Date.now(),
     comments: [
       {
         id: crypto.randomUUID(),

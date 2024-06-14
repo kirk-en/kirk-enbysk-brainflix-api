@@ -3,7 +3,6 @@ import express from "express";
 import videoRoutes from './routes/videos.js';
 import cors from 'cors';
 
-// needs .js extension?
 import 'dotenv/config';
 const PORT = process.env.PORT;
 
